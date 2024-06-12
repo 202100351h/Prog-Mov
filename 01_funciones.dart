@@ -1,14 +1,11 @@
 void main (List <String> args){
-  print ("hola mundo");
   //funciones sin retorno y con retorno
-  int n1=5;
-  int n2=6;
-  String Suma;
+  int n1 = 5;
+  int n2 = 6;
   print("Funciones!!!");
-  String name = "Men Lii";
+  String name = "MenLii";
   MostrarMensaje(name);
-  print(Suma(n1, n2));
-
+  print (suma(n1, n2));
 }
 
 void MostrarMensaje(String x){
@@ -17,6 +14,6 @@ void MostrarMensaje(String x){
   print("-----------------");
 }
 
-Summa(int a, int b){
+suma(int a, int b){
   return a + b;
 }
