@@ -18,4 +18,5 @@ void main(){
 
   print(Random().nextInt(18));  
 
+  print(min(4, 7));
 }
