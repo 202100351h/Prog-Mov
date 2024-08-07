@@ -2,6 +2,7 @@ import 'package:app6_components_app_2024/pages/alert_page.dart';
 import 'package:app6_components_app_2024/pages/avatar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:app6_components_app_2024/pages/card_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 20.0,
               ),
               Container(
@@ -23,20 +24,20 @@ class HomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(20.0),
-                  image: const DecorationImage(
+                  image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage("assets/img/david_chicle.png"),
                   ),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.75),
-                      offset: const Offset(5, 5),
+                      offset: Offset(5, 5),
                       blurRadius: 15,
                     ),
                   ],
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10.0,
               ),
               Text(
@@ -46,32 +47,32 @@ class HomePage extends StatelessWidget {
                   letterSpacing: 1,
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 185.0,
                 child: Divider(),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10.0,
               ),
               ItemComponentWidget(
                 title: "Avatar",
-                toPage: const AvatarPage(),
+                toPage: AvatarPage(),
               ),
               ItemComponentWidget(
                 title: "Alert",
-                toPage: const AlertPage(),
+                toPage: AlertPage(),
               ),
               ItemComponentWidget(
                 title: "Cards",
-                toPage: const AvatarPage(),
+                toPage: CardPage(),
               ),
               ItemComponentWidget(
                 title: "Inputs",
-                toPage: const AvatarPage(),
+                toPage: AvatarPage(),
               ),
               ItemComponentWidget(
                 title: "Lists",
-                toPage: const AvatarPage(),
+                toPage: AvatarPage(),
               ),
             ],
           ),
@@ -85,12 +86,12 @@ class ItemComponentWidget extends StatelessWidget {
   String title;
   Widget toPage;
 
-  ItemComponentWidget({super.key, required this.title, required this.toPage});
+  ItemComponentWidget({required this.title, required this.toPage});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(
+      margin: EdgeInsets.symmetric(
         horizontal: 12.0,
         vertical: 10.0,
       ),
@@ -101,7 +102,7 @@ class ItemComponentWidget extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.5),
             blurRadius: 12.0,
-            offset: const Offset(5, 5),
+            offset: Offset(5, 5),
           ),
         ],
       ),
@@ -114,7 +115,7 @@ class ItemComponentWidget extends StatelessWidget {
             ),
           );
         },
-        leading: const Icon(
+        leading: Icon(
           Icons.check_circle_outline,
           color: Colors.black45,
         ),
@@ -128,7 +129,7 @@ class ItemComponentWidget extends StatelessWidget {
           "Ir a detalle de $title",
           style: GoogleFonts.poppins(),
         ),
-        trailing: const Icon(
+        trailing: Icon(
           Icons.chevron_right,
           color: Colors.black45,
         ),
