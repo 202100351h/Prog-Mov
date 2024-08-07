@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Components App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(textTheme: GoogleFonts.mandaliTextTheme()),
-      home: Homepage(),
+      home: HomePage(),
     );
   }
 }
