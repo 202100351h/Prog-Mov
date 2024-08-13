@@ -79,7 +79,7 @@ class LoanCalculatorPage extends StatefulWidget {
 
 class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
   late double loanAmount;
-  double interestRate = 5.0;
+  double interestRate = 5.0; // Valor inicial de la tasa de interés
 
   @override
   void initState() {
@@ -110,7 +110,6 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                     'S/. ${loanAmount.toStringAsFixed(2)}',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(width: 10.0),
                 ],
               ),
               Slider(
@@ -125,7 +124,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
               ),
               SizedBox(height: 20.0),
               Text(
-                'Tasa de interés:',
+                'Tasa de interés anual',
                 style: TextStyle(fontSize: 18),
               ),
               Row(
@@ -140,7 +139,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
               Slider(
                 value: interestRate,
                 min: 0,
-                max: 10,
+                max: 50,
                 onChanged: (value) {
                   setState(() {
                     interestRate = value;
@@ -149,7 +148,9 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
               ),
               SizedBox(height: 20.0),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // Lógica para calcular el préstamo
+                },
                 child: Text('Calcular'),
               ),
             ],
