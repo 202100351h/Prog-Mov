@@ -30,14 +30,14 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.black, // Cambia este color según tus preferencias
+                color: Colors.black,
               ),
             ),
             Text(
               'Obtenga un préstamo bancario con solo unos pocos clics',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.grey[800], // Color diferente para este texto
+                color: Colors.grey[800],
               ),
             ),
             SizedBox(height: 20.0),
@@ -82,8 +82,8 @@ class LoanCalculatorPage extends StatefulWidget {
 
 class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
   late double loanAmount;
-  double interestRate = 10.0; // Valor inicial de la tasa de interés
-  int loanTerm = 12; // Plazo inicial del préstamo en meses
+  double interestRate = 10.0;
+  int loanTerm = 12;
 
   @override
   void initState() {
@@ -96,7 +96,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Calculadora de Préstamos'),
-        backgroundColor: const Color.fromARGB(255, 9, 42, 69), // Azul marino
+        backgroundColor: const Color.fromARGB(255, 9, 42, 69),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -104,12 +104,10 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Monto del préstamo
               Text(
                 'Monto del préstamo:',
                 style: TextStyle(
-                    fontSize: 18,
-                    color: const Color.fromARGB(255, 9, 42, 69)), // Azul marino
+                    fontSize: 18, color: const Color.fromARGB(255, 9, 42, 69)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -119,7 +117,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orange, // Naranja
+                      color: Colors.orange,
                     ),
                   ),
                 ],
@@ -128,9 +126,9 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 value: loanAmount,
                 min: 1000,
                 max: 50000,
-                divisions: 490, // Más divisiones para mayor precisión
-                activeColor: Colors.orange, // Color de la barra deslizadora
-                inactiveColor: Colors.orange.withOpacity(0.3), // Color inactivo
+                divisions: 490,
+                activeColor: Colors.orange,
+                inactiveColor: Colors.orange.withOpacity(0.3),
                 onChanged: (value) {
                   setState(() {
                     loanAmount = value;
@@ -142,22 +140,17 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 children: [
                   Text('S/. 1000',
                       style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 9, 42, 69))), // Azul marino
+                          color: const Color.fromARGB(255, 9, 42, 69))),
                   Text('S/. 50000',
                       style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 9, 42, 69))), // Azul marino
+                          color: const Color.fromARGB(255, 9, 42, 69))),
                 ],
               ),
               SizedBox(height: 20.0),
-
-              // Plazo del préstamo
               Text(
                 'Plazo del préstamo (meses)',
                 style: TextStyle(
-                    fontSize: 18,
-                    color: const Color.fromARGB(255, 9, 42, 69)), // Azul marino
+                    fontSize: 18, color: const Color.fromARGB(255, 9, 42, 69)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +160,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orange, // Naranja
+                      color: Colors.orange,
                     ),
                   ),
                 ],
@@ -176,8 +169,8 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 value: loanTerm.toDouble(),
                 min: 6,
                 max: 36,
-                activeColor: Colors.orange, // Color de la barra deslizadora
-                inactiveColor: Colors.orange.withOpacity(0.3), // Color inactivo
+                activeColor: Colors.orange,
+                inactiveColor: Colors.orange.withOpacity(0.3),
                 onChanged: (value) {
                   setState(() {
                     loanTerm = value.toInt();
@@ -189,22 +182,17 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 children: [
                   Text('6 meses',
                       style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 9, 42, 69))), // Azul marino
+                          color: const Color.fromARGB(255, 9, 42, 69))),
                   Text('36 meses',
                       style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 9, 42, 69))), // Azul marino
+                          color: const Color.fromARGB(255, 9, 42, 69))),
                 ],
               ),
               SizedBox(height: 20.0),
-
-              // Tasa de interés anual
               Text(
                 'Tasa de interés anual',
                 style: TextStyle(
-                    fontSize: 18,
-                    color: const Color.fromARGB(255, 9, 42, 69)), // Azul marino
+                    fontSize: 18, color: const Color.fromARGB(255, 9, 42, 69)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -214,7 +202,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orange, // Naranja
+                      color: Colors.orange,
                     ),
                   ),
                 ],
@@ -223,8 +211,8 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 value: interestRate,
                 min: 10,
                 max: 50,
-                activeColor: Colors.orange, // Color de la barra deslizadora
-                inactiveColor: Colors.orange.withOpacity(0.3), // Color inactivo
+                activeColor: Colors.orange,
+                inactiveColor: Colors.orange.withOpacity(0.3),
                 onChanged: (value) {
                   setState(() {
                     interestRate = value;
@@ -236,20 +224,15 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 children: [
                   Text('10%',
                       style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 9, 42, 69))), // Azul marino
+                          color: const Color.fromARGB(255, 9, 42, 69))),
                   Text('50%',
                       style: TextStyle(
-                          color: const Color.fromARGB(
-                              255, 9, 42, 69))), // Azul marino
+                          color: const Color.fromARGB(255, 9, 42, 69))),
                 ],
               ),
               SizedBox(height: 20.0),
-
-              // Botón Calcular
               ElevatedButton(
                 onPressed: () {
-                  // Navegar a la página de detalles del préstamo
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -263,8 +246,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                 },
                 child: Text('Saca tu préstamo'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      const Color.fromARGB(255, 9, 42, 69), // Azul marino
+                  backgroundColor: const Color.fromARGB(255, 9, 42, 69),
                 ),
               ),
             ],
@@ -286,7 +268,7 @@ class LoanDetailsPage extends StatelessWidget {
     required this.loanTerm,
   });
 
-  // Método para calcular la cuota mensual (EMI)
+  //calcular la cuota mensual
   double calculateMonthlyInstallment() {
     double monthlyInterestRate = interestRate / 12 / 100;
     return loanAmount *
@@ -304,7 +286,7 @@ class LoanDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Detalles del Préstamo'),
-        backgroundColor: const Color.fromARGB(255, 9, 42, 69), // Azul marino
+        backgroundColor: const Color.fromARGB(255, 9, 42, 69),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -314,55 +296,39 @@ class LoanDetailsPage extends StatelessWidget {
             _buildDetailRow(
                 'Monto del préstamo:',
                 'S/. ${loanAmount.toStringAsFixed(2)}',
-                const Color.fromARGB(
-                    255, 9, 42, 69), // Azul marino para las etiquetas
-                Colors.orange // Naranja para los valores
-                ),
-            Divider(color: Colors.grey.shade400), // Línea de separación
+                const Color.fromARGB(255, 9, 42, 69),
+                Colors.orange),
+            Divider(color: Colors.grey.shade400),
             _buildDetailRow(
                 'Tasa de interés anual:',
                 '${interestRate.toStringAsFixed(1)}%',
-                const Color.fromARGB(
-                    255, 9, 42, 69), // Azul marino para las etiquetas
-                Colors.orange // Naranja para los valores
-                ),
-            Divider(color: Colors.grey.shade400), // Línea de separación
-            _buildDetailRow(
-                'Plazo del préstamo:',
-                '$loanTerm meses',
-                const Color.fromARGB(
-                    255, 9, 42, 69), // Azul marino para las etiquetas
-                Colors.orange // Naranja para los valores
-                ),
-            Divider(color: Colors.grey.shade400), // Línea de separación
+                const Color.fromARGB(255, 9, 42, 69),
+                Colors.orange),
+            Divider(color: Colors.grey.shade400),
+            _buildDetailRow('Plazo del préstamo:', '$loanTerm meses',
+                const Color.fromARGB(255, 9, 42, 69), Colors.orange),
+            Divider(color: Colors.grey.shade400),
             _buildDetailRow(
                 'Cuota mensual:',
                 'S/. ${monthlyInstallment.toStringAsFixed(2)}',
-                const Color.fromARGB(
-                    255, 9, 42, 69), // Azul marino para las etiquetas
-                Colors.orange // Naranja para los valores
-                ),
-            Divider(color: Colors.grey.shade400), // Línea de separación
+                const Color.fromARGB(255, 9, 42, 69),
+                Colors.orange),
+            Divider(color: Colors.grey.shade400),
             _buildDetailRow(
                 'Total de intereses a pagar:',
                 'S/. ${totalInterest.toStringAsFixed(2)}',
-                const Color.fromARGB(
-                    255, 9, 42, 69), // Azul marino para las etiquetas
-                Colors.orange // Naranja para los valores
-                ),
-            Divider(color: Colors.grey.shade400), // Línea de separación
+                const Color.fromARGB(255, 9, 42, 69),
+                Colors.orange),
+            Divider(color: Colors.grey.shade400),
             _buildDetailRow(
                 'Total a pagar:',
                 'S/. ${totalPayment.toStringAsFixed(2)}',
-                const Color.fromARGB(
-                    255, 9, 42, 69), // Azul marino para las etiquetas
-                Colors.orange // Naranja para los valores
-                ),
+                const Color.fromARGB(255, 9, 42, 69),
+                Colors.orange),
             SizedBox(height: 30.0),
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Redirigir a la página de aprobación del préstamo
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -372,8 +338,7 @@ class LoanDetailsPage extends StatelessWidget {
                 },
                 child: Text('Saca tu préstamo'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      const Color.fromARGB(255, 9, 42, 69), // Azul marino
+                  backgroundColor: const Color.fromARGB(255, 9, 42, 69),
                 ),
               ),
             ),
@@ -393,7 +358,7 @@ class LoanDetailsPage extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 18,
-              color: labelColor, // Color para las etiquetas
+              color: labelColor,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -403,8 +368,8 @@ class LoanDetailsPage extends StatelessWidget {
             value,
             style: TextStyle(
               fontSize: 18,
-              color: valueColor, // Color para los valores
-              fontWeight: FontWeight.bold, // Alinear el texto a la derecha
+              color: valueColor,
+              fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.right,
           ),
@@ -420,7 +385,7 @@ class LoanApprovalPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Aprobación de Préstamo'),
-        backgroundColor: const Color.fromARGB(255, 9, 42, 69), // Azul marino
+        backgroundColor: const Color.fromARGB(255, 9, 42, 69),
       ),
       body: Center(
         child: Column(
@@ -428,9 +393,8 @@ class LoanApprovalPage extends StatelessWidget {
           children: [
             Icon(
               Icons.check_circle,
-              color:
-                  Colors.orange, // Color naranja para el ícono de verificación
-              size: 100.0, // Tamaño del ícono
+              color: Colors.orange,
+              size: 100.0,
             ),
             SizedBox(height: 20.0),
             Text(
@@ -438,7 +402,7 @@ class LoanApprovalPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(255, 9, 42, 69), // Azul marino
+                color: const Color.fromARGB(255, 9, 42, 69),
               ),
             ),
             SizedBox(height: 20.0),
@@ -446,21 +410,19 @@ class LoanApprovalPage extends StatelessWidget {
               'Su crédito fue aprobado',
               style: TextStyle(
                 fontSize: 24,
-                color: const Color.fromARGB(255, 9, 42, 69), // Azul marino
+                color: const Color.fromARGB(255, 9, 42, 69),
               ),
             ),
             SizedBox(height: 40.0),
             SizedBox(
-              width: double
-                  .infinity, // Hace que el botón ocupe todo el ancho disponible
+              width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pop(); // Volver a la página anterior
+                  Navigator.of(context).pop();
                 },
                 child: Text('Volver'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      const Color.fromARGB(255, 9, 42, 69), // Azul marino
+                  backgroundColor: const Color.fromARGB(255, 9, 42, 69),
                 ),
               ),
             ),
