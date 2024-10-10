@@ -12,12 +12,12 @@ class InitPage extends StatefulWidget {
 class _InitPageState extends State<InitPage> {
   int _currentIndex = 0;
 
-  List<Widget> _pages = [
-    HomePage(),
-    Center(child: Text("Shorts")),
-    Center(child: Text("Agregar")),
-    Center(child: Text("Suscripciones")),
-    Center(child: Text("Biblioteca")),
+  final List<Widget> _pages = [
+    HomePageprof(),
+    const Center(child: Text("Shorts")),
+    const Center(child: Text("Agregar")),
+    const Center(child: Text("Suscripciones")),
+    const Center(child: Text("Biblioteca")),
   ];
 
   @override
@@ -25,6 +25,7 @@ class _InitPageState extends State<InitPage> {
     return Scaffold(
       backgroundColor: kBrandPrimaryColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: kBrandPrimaryColor,
         title: Image.asset(
           "assets/images/logo.png",
@@ -33,36 +34,64 @@ class _InitPageState extends State<InitPage> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.cast,
               color: Colors.white,
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.notification_add,
-              color: Colors.white,
-            ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.notification_add,
+                  color: Colors.white,
+                ),
+              ),
+              Positioned(
+                right: 0,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  constraints: const BoxConstraints(
+                    minWidth: 10,
+                    minHeight: 10,
+                  ),
+                  child: const Text(
+                    '9+',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 11,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          CircleAvatar(
+          const CircleAvatar(
             backgroundColor: kBrandSecundaryColor,
             backgroundImage: NetworkImage(
               "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             ),
             radius: 15,
           ),
-          SizedBox(
+          const SizedBox(
             width: 12,
           ),
         ],
@@ -81,13 +110,13 @@ class _InitPageState extends State<InitPage> {
           setState(() {});
         },
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             label: "Principal",
             icon: Icon(
               Icons.home,
             ),
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             label: "Shorts",
             icon: Icon(
               Icons.play_arrow,
@@ -96,20 +125,20 @@ class _InitPageState extends State<InitPage> {
           BottomNavigationBarItem(
             label: "",
             icon: Container(
-              margin: EdgeInsets.only(top: 5),
-              child: Icon(
+              margin: const EdgeInsets.only(top: 5),
+              child: const Icon(
                 Icons.add_circle_outline_rounded,
                 size: 35.0,
               ),
             ),
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             label: "Suscripciones",
             icon: Icon(
               Icons.subscriptions_rounded,
             ),
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             label: "Biblioteca",
             icon: Icon(
               Icons.video_collection_rounded,

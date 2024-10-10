@@ -3,19 +3,32 @@ class VideoModel {
   String etag;
   Id id;
   Snippet snippet;
+  String duration; // Cambiado a String
+  String viewCount; // Cambiado a String
+  String channelAvatarUrl; // Cambiado a String
 
   VideoModel({
     required this.kind,
     required this.etag,
     required this.id,
     required this.snippet,
+    required this.duration,
+    required this.viewCount,
+    required this.channelAvatarUrl,
   });
 
-  factory VideoModel.fromJson(Map<String, dynamic> json) => VideoModel(
+  factory VideoModel.fromJson(Map<String, dynamic> json, String avatarUrl) =>
+      VideoModel(
         kind: json["kind"],
         etag: json["etag"],
         id: Id.fromJson(json["id"]),
         snippet: Snippet.fromJson(json["snippet"]),
+        duration: json["duration"] ??
+            '', // Asegúrate de que el JSON contenga esta clave
+        viewCount: json["viewCount"] != null
+            ? json["viewCount"].toString()
+            : '', // Asegúrate de que el JSON contenga esta clave
+        channelAvatarUrl: avatarUrl, // Se pasa el avatarUrl directamente
       );
 
   Map<String, dynamic> toJson() => {
@@ -23,6 +36,9 @@ class VideoModel {
         "etag": etag,
         "id": id.toJson(),
         "snippet": snippet.toJson(),
+        "duration": duration, // Agregado
+        "viewCount": viewCount, // Agregado
+        "channelAvatarUrl": channelAvatarUrl, // Agregado
       };
 }
 
