@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845563892350",
+    "project_id": "codigo-task-5f5ff",
+    "storage_bucket": "codigo-task-5f5ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845563892350:android:041d258931de1c5bf07e2f",
+        "android_client_info": {
+          "package_name": "com.livecode.firetask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtne-_bpt0xBTzu1G30I7NW1pPWinfSec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
